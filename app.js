@@ -1,17 +1,12 @@
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
-// const bodyParser = require('body-parser')
 const app = require('express')()
 const http = require('http')
 // Middleware
 app.use(cors())
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: false }))
-// Serve statics
-app.use("/css", express.static(path.join(__dirname, "Vues", "dist", "css")))
-app.use("/img", express.static(path.join(__dirname, "Vues", "dist", "img")))
-app.use("/js", express.static(path.join(__dirname, "Vues", "dist", "js")))
+app.use('/', express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "Vues", "dist", "index.html"))
 })
