@@ -7,9 +7,9 @@ const http = require('http')
 app.use(cors())
 app.use('/', express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "Vues", "dist", "index.html"))
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, "Vues", "dist", "index.html"))
+// })
 // Allow Cross Origin
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
